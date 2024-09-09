@@ -1,0 +1,97 @@
+<mat-toolbar class="mat-elevation-z3">
+  <div class="toolbar-div">
+    <div class="toolbar-div-left">
+      <h2 class="brand-h2">Credit Card App</h2>
+    </div>
+  </div>
+
+  <div class="head-div">
+    <!-- <div class="heading"></div> -->
+    <div class="user-div" *ngIf="isLoggedIn == true">
+      <span class="user-name"
+        >{{ this.userData.username | uppercase
+        }}{{ " ( " + this.userData.roleName + " )" }}</span
+      >
+      <span class="bi bi-chevron-down ms-1 usericon"></span>
+    </div>
+    <div class="user-div" *ngIf="isLoggedIn == false">
+      <button
+        mat-flat-button
+        class="btn-class accent"
+        type="button"
+        (click)="GoToLogin()"
+      >
+        Login
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+
+<div style="display: flex">
+  <div class="side-nav">
+    <mat-sidenav #sidenav mode="side" [(opened)]="sidenavOpened">
+      <mat-nav-list>
+        <mat-list-item (click)="goToHome()">
+          <mat-icon class="menu-icon" title="Home">home</mat-icon>
+          <a
+            mat-subheader
+            class="menu-header"
+            [routerLink]="'/home'"
+            routerLinkActive="active"
+            style="text-decoration: none"
+            >{{ "Home" }}</a
+          >
+
+          <!-- <span mat-subheader class="menu-header">Home</span> -->
+        </mat-list-item>
+        <div *ngIf="menuItems.length != 0 || isLoggedIn">
+          <ng-container *ngFor="let menu of menuItems">
+            <mat-list-item (click)="toggleMenu(menu.id)">
+              <mat-icon
+                class="menu-icon"
+                [ngClass]="{ 'active-icon': expandedMenu === menu.id }"
+              >
+                {{ menu.icon }}
+              </mat-icon>
+              <span mat-subheader class="menu-header">
+                {{ menu.name }}
+                <mat-icon *ngIf="!collapsed" class="ps-1 float-end pt-1">
+                  {{
+                    expandedMenu === menu.id ? "expand_more" : "chevron_right"
+                  }}
+                </mat-icon>
+              </span>
+            </mat-list-item>
+            <ng-container *ngIf="expandedMenu === menu.id">
+              <a
+                mat-list-item
+                *ngFor="let item of menu.items"
+                [routerLink]="item.path"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+              >
+                <span class="sub-menu-item">{{ item.name }}</span>
+              </a>
+            </ng-container>
+          </ng-container>
+        </div>
+        <mat-list-item (click)="LogOut()" *ngIf="isLoggedIn == true">
+          <mat-icon class="menu-icon" title="Home">logout</mat-icon>
+          <a
+            mat-subheader
+            class="menu-header"
+            routerLinkActive="active"
+            style="text-decoration: none"
+            >{{ "LogOut" }}</a
+          >
+
+          <!-- <span mat-subheader class="menu-header">Home</span> -->
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+  </div>
+  <div class="content" [style.margin-left]="collapsed ? '1px' : ''">
+    <router-outlet></router-outlet>
+    <div class="footer-main"></div>
+  </div>
+</div>

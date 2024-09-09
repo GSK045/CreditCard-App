@@ -1,0 +1,7 @@
+<div class="navMenu">
+  <nav class="nav flex-column">
+    <div *ngFor="let i of items">
+      <a class="nav-link" routerLink="/{{ i.menuPath }}">{{ i.menuName }}</a>
+    </div>
+  </nav>
+</div>

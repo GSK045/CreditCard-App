@@ -1,0 +1,243 @@
+mat-toolbar {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  /* #52a2ff; */
+  display: flex;
+  justify-content: space-between;
+  height: 56px;
+  background-color: #2b6682;
+}
+.toolbar-div {
+  display: flex;
+  width: 18% !important;
+  background-color: #2b6682;
+  text-align: center;
+}
+.side-nav {
+  width: 22% !important;
+}
+.toolbar-div-left {
+  width: 100%;
+}
+
+.head-div {
+  width: 82%;
+  display: flex;
+  background-color: rgb(4, 114, 144);
+}
+.brand-h2 {
+  margin: 0;
+  padding: 12px 15px;
+  color: #fff;
+}
+.heading {
+  font-size: 30px;
+  width: 70%;
+  padding-top: 10px;
+  text-align: left;
+  padding-left: 15px;
+}
+.heading-h2 {
+  color: aliceblue;
+  margin-bottom: 0;
+  color: #fff;
+}
+.user-div {
+  width: 100%;
+  padding-top: 10px;
+  text-align: right;
+  padding-right: 15px;
+  float: right;
+}
+.user-img {
+  width: 50px;
+  height: 48px;
+  border-radius: 50%;
+  background: none;
+  margin-right: 10px;
+}
+
+.menu-icon {
+  font-size: 22px;
+  background: #fff;
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 12%;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 34px;
+  height: 34px !important;
+  width: 34px !important;
+}
+.menu-icon:hover {
+  color: #37b7c3;
+}
+
+.sidenav {
+  width: 340px;
+  height: 92vh;
+  overflow: auto;
+}
+
+.content {
+  /* padding-left: 14px; */
+  transition: margin-left 0.3s;
+  background-color: #f6f7fb;
+  /* color: #0e0e0e; */
+  overflow: auto;
+  height: 92vh;
+  /* border:0px !important; */
+  width: 100vw;
+  max-width: 100vw;
+  padding-bottom: 4%;
+}
+mat-sidenav-container {
+  height: calc(100vh - 64px);
+}
+
+mat-list-item {
+  cursor: pointer;
+}
+.sub-menu-item {
+  padding-left: 45px;
+  color: #0e0e0e;
+}
+.sub-menu-item:hover {
+  padding-left: 45px;
+  color: #37b7c3;
+}
+
+mat-sidenav,
+mat-sidenav-content {
+  transition: all 300ms ease-in-out;
+}
+mat-sidenav {
+  background-color: #fff;
+}
+.menu-header {
+  color: #0e0e0e;
+}
+.menu-header:hover {
+  color: #37b7c3;
+}
+
+/* mat-list-item, */
+.active-link {
+  color: #00405e !important;
+  background-color: #dcdfea !important;
+
+  width: 100%;
+}
+.active-icon {
+  color: #37b7c3; /* or any color/style you prefer */
+}
+.active-link .sub-menu-item {
+  color: #00405e !important;
+}
+
+.home-tab {
+  color: #00405e !important;
+  background-color: #dcdfea !important;
+}
+.home-tab a.active {
+  color: #00405e !important;
+  background-color: #dcdfea !important;
+}
+
+.home-tab a.active:hover {
+  color: #33a0e3 !important;
+}
+.mat-toolbar-single-row {
+  padding: 0 !important;
+  align-items: inherit;
+  color: #fff !important;
+}
+
+.cdk-overlay-pane {
+  min-width: 250px;
+}
+.cdk-overlay-pane {
+  margin-top: 10px;
+}
+.cdk-overlay-connected-position-bounding-box {
+  top: 57px !important;
+  padding-left: 10px;
+}
+
+.sidenav-icon-bar {
+  width: 70px;
+}
+
+.footer-main {
+  position: fixed;
+  width: 100%;
+  background: white;
+  color: rgb(102, 99, 99);
+  bottom: 0;
+  padding: 10px 0px;
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+  z-index: 9;
+}
+
+@media screen and (max-device-width: 768px) {
+  .toolbar-div {
+    width: 34%;
+  }
+  .user-name {
+    display: none;
+  }
+  .usericon {
+    display: none;
+  }
+  .brand-h2 {
+    font-size: 16px !important;
+  }
+  .heading {
+    width: 80% !important;
+  }
+  .sidenav-icon-bar {
+    width: 74px;
+  }
+}
+
+@media screen and (max-device-width: 480px) {
+  .toolbar-div-left {
+    display: none;
+  }
+  .toolbar-div {
+    width: 45px;
+  }
+  .heading {
+    width: 80% !important;
+  }
+  .sidenav-icon-bar {
+    width: 50px;
+  }
+  .menu-icon {
+    font-size: 15px;
+    line-height: 21px;
+    height: 20px !important;
+    width: 20px !important;
+    box-shadow: 0px 0 3px rgba(0, 0, 0, 0.3);
+  }
+  .head-div {
+    width: 90%;
+  }
+  .mat-toolbar {
+    background: rgb(4, 114, 144);
+  }
+  .content {
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (max-device-width: 1024px) {
+  .brand-h2 {
+    font-size: 16px !important;
+  }
+  .heading {
+    width: 52%;
+  }
+}

@@ -1,0 +1,84 @@
+<!-- added -->
+<h4 class="header">
+  <b>{{ isAdding ? "APPLY CREDIT CARD" : "UPDATE CREDIT CARD" }}</b>
+</h4>
+<form [formGroup]="formData" (ngSubmit)="save()">
+  <div class="example-container">
+    <mat-card class="card" style="padding: 0">
+      <!-- <mat-card-header>
+        <b>Add</b>
+      </mat-card-header> -->
+      <mat-card-content class="cmn-mat-card-content mat-card-scroll">
+        <mat-form-field appearance="outline" class="mat-45">
+          <mat-label>Full Name</mat-label>
+          <input matInput formControlName="userName" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="mat-45">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="mat-45">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="phoneNumber" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="mat-45">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="address" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="mat-45">
+          <mat-label>Annual Income</mat-label>
+          <input matInput formControlName="income" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="mat-45">
+          <mat-label>Aadhar Number </mat-label>
+          <input matInput formControlName="idProofNumber" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="mat-45">
+          <mat-label>Date Of Birth</mat-label>
+          <input
+            matInput
+            [matDatepicker]="startDatePicker"
+            (click)="startDatePicker.open()"
+            formControlName="dateOfBirth"
+            [value]="formData.get('dateOfBirth')?.value | date : 'yyyy-MM-dd'"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="startDatePicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #startDatePicker></mat-datepicker>
+          <mat-error *ngIf="formData.get('dateOfBirth')?.hasError('required')"
+            >Date of Birth is required.</mat-error
+          >
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-footer class="add-mat-card-footer">
+        <div>
+          <button
+            mat-flat-button
+            class="btn-class accent"
+            (click)="gotoCreditCard()"
+            type="button"
+          >
+            BACK
+          </button>
+          <button
+            *ngIf="isAdding"
+            mat-flat-button
+            class="btn-class warn"
+            (click)="clearForm()"
+            type="button"
+          >
+            RESET
+          </button>
+          <button mat-flat-button class="btn-class primary" type="submit">
+            {{ isAdding ? "ADD" : "UPDATE" }}
+          </button>
+        </div>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</form>

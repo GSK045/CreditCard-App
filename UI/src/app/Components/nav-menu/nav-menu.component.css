@@ -1,0 +1,10 @@
+.navMenu{
+    background-color: blueviolet;
+     margin-left: 10px;
+     position: relative;
+     height: 680px;
+}
+
+.nav-link{
+    color: white;
+}
