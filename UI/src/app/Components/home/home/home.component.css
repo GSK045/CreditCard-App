@@ -1,0 +1,22 @@
+.example-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  margin: 0px;
+  text-align: left;
+  width: 70%;
+  margin: auto;
+  padding: 10px;
+}
+.apply {
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn-class.primary {
+  color: white !important;
+  background-color: #004869 !important;
+}

@@ -1,0 +1,38 @@
+<h6 mat-dialog-title>Enter Comments</h6>
+
+<div>
+  <mat-dialog-content>
+    <mat-form-field appearance="outline" class="mat-50">
+      <mat-label>Reason</mat-label>
+      <textarea matInput [(ngModel)]="reason"></textarea>
+    </mat-form-field>
+  </mat-dialog-content>
+</div>
+
+<div style="text-align: right; margin-top: 1%" class="button">
+  <button
+    mat-button
+    (click)="onCancelDialog()"
+    type="button"
+    class="btn-class"
+    style="background-color: brown; color: white"
+  >
+    CANCEL
+  </button>
+
+  <button
+    (click)="onApprove('R')"
+    class="btn-class"
+    style="color: white; background-color: rgb(97, 97, 38)"
+  >
+    REJECT
+  </button>
+
+  <button
+    (click)="onApprove('A')"
+    class="btn-class"
+    style="background-color: #004869; color: white"
+  >
+    APPROVE
+  </button>
+</div>

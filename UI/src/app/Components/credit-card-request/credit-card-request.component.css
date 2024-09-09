@@ -1,0 +1,53 @@
+.mat-card-scroll {
+  max-height: 60vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.mat-45 {
+  width: 50%;
+  padding-right: 1rem;
+}
+.mat-50 {
+  width: 100%;
+}
+
+.mat-20 {
+  padding: 0 1rem;
+  width: 20%;
+}
+.mat-30 {
+  width: 30%;
+}
+.header {
+  font-weight: bold !important;
+  text-align: center;
+  margin: 1rem !important;
+}
+.card {
+  margin: 0px;
+  text-align: left;
+  width: 70%;
+  margin: auto;
+  padding: 10px;
+}
+
+.btn-class.accent {
+  color: white !important;
+  background-color: rgb(97, 97, 38) !important;
+  margin-right: 15px;
+}
+.add-mat-card-footer {
+  margin: 2%;
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-class.primary {
+  color: white !important;
+  background-color: #004869 !important;
+}
+.btn-class.warn {
+  color: white !important;
+  background-color: red !important;
+  margin-right: 15px;
+}

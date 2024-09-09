@@ -1,0 +1,22 @@
+.cmn-card {
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 68vh;
+  }
+  .cmn-card-content {
+    height: 90%;
+  }
+  .header {
+    font-weight: bold !important;
+    text-align: center;
+    margin: 1rem !important;
+  }
+  .example-button-row {
+    padding: 0 2%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .search-container .leads-dropdown .cdk-overlay-pane {
+    top: 75px !important;
+  }
